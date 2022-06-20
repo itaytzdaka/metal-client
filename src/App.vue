@@ -1,26 +1,56 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <!-- <img alt="Vue logo" src="./assets/logo.png"> -->
+  <!-- <Layout msg="Welcome to Your Vue.js App"/> -->
+  <Layout/>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import Layout from './components/Layout.vue'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    Layout
   }
 }
 </script>
 
 <style>
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  direction: rtl;
+}
+html{
+  overflow-y: scroll;
+}
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
+}
+.container{
+  width: 80%;
+  margin: auto;
+}
+
+@media only screen and (max-width: 1200px) {
+  :root {
+    font-size: 14px;
+  }
+}
+
+@media only screen and (max-width: 900px) {
+  :root {
+    font-size: 12px;
+  }
+}
+
+@media only screen and (max-width: 450px) {
+  :root {
+    font-size: 10px;
+  }
 }
 </style>
