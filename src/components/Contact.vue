@@ -11,14 +11,14 @@
         </div>
 
       </div>
-      <form action="">
+      <form @submit="sendEmail">
         <div class="container flex-column">
           <h2>יצירת קשר</h2>
-          <input type="text" name="firstName" id="firstName" placeholder="שם פרטי">
-          <input type="text" name="lastName" id="lastName" placeholder="שם משפחה">
-          <input type="email" name="email" id="email" placeholder="אימייל">
-          <input type="text" name="phone" id="phone" placeholder="טלפון">
-          <textarea name="message" id="message" cols="30" rows="10" placeholder="הודעה"></textarea>
+          <input type="text" name="firstName" id="firstName" placeholder="שם פרטי" v-model="firstName">
+          <input type="text" name="lastName" id="lastName" placeholder="שם משפחה" v-model="lastName">
+          <input type="email" name="email" id="email" placeholder="אימייל" v-model="email">
+          <input type="text" name="phone" id="phone" placeholder="טלפון" v-model="phone">
+          <textarea name="message" id="message" cols="30" rows="10" placeholder="הודעה" v-model="message"></textarea>
           <button>שלח</button>
         </div>
 
@@ -30,11 +30,47 @@
 </template>
 
 <script>
+import emailjs from 'emailjs-com';
+
 export default {
   name: 'Contact',
   // props: {
   //   msg: String
   // }
+  data() {
+    return {
+      firstName: '',
+      lastName: '',
+      email: '',
+      phone: '',
+      message: ''
+    }
+  },
+  methods: {
+    async sendEmail(e) {
+      e.preventDefault();
+      try {
+        // await emailjs.sendForm('service_uvwy2jp', 'template_zpwpnpo', e.target, 'Kbv6svu_53GSgKW4w',{
+        //   from_name: this.firstName +" "+ this.lastName,
+        //   email: this.email,
+        //   phone: this.phone,
+        //   message: this.message
+        // });
+        await emailjs.sendForm('service_uvwy2jp', 'template_zpwpnpo', e.target, 'Kbv6svu_53GSgKW4w');
+        alert("ההודעה נשלחה");
+
+      } catch (error) {
+        alert("התרחשה שגיאה");
+        console.log("error: ",{ error })
+      }
+      // Reset form field
+      this.firstName = '';
+      this.lastName = '';
+      this.email = '';
+      this.phone = '';
+      this.message = '';
+    },
+  }
 }
 </script>
 

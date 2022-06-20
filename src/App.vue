@@ -44,13 +44,13 @@ html{
 
 @media only screen and (max-width: 900px) {
   :root {
-    font-size: 12px;
+    font-size: 13px;
   }
 }
 
 @media only screen and (max-width: 450px) {
   :root {
-    font-size: 10px;
+    font-size: 12px;
   }
 }
 </style>
