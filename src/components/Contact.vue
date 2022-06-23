@@ -61,7 +61,7 @@ export default {
 
       } catch (error) {
         alert("התרחשה שגיאה");
-        console.log("error: ",{ error })
+        console.log("error: ", { error })
       }
       // Reset form field
       this.firstName = '';
@@ -86,6 +86,7 @@ export default {
 .box {
   display: flex;
   margin: 5% 0;
+  padding: 5% 0;
   width: 72%;
   min-height: 80%;
   background: white;
@@ -194,6 +195,12 @@ p {
 }
 
 @media only screen and (max-width: 450px) {
+
+  .box {
+    width: 100%;
+    margin: 0;
+    border-radius: 0;
+  }
 
   input[type=text],
   input[type=email],

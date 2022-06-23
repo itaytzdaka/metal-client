@@ -36,19 +36,14 @@ html{
   margin: auto;
 }
 
-@media only screen and (max-width: 1200px) {
-  :root {
-    font-size: 14px;
-  }
-}
-
-@media only screen and (max-width: 900px) {
-  :root {
-    font-size: 13px;
-  }
-}
 
 @media only screen and (max-width: 450px) {
+  :root {
+    font-size: 15px;
+  }
+}
+
+@media only screen and (max-width: 300px) {
   :root {
     font-size: 12px;
   }

@@ -89,5 +89,9 @@ img {
   }
 }
 
-
+@media only screen and (max-width: 900px) {
+  .software {
+    margin: 10% 0;
+  }
+}
 </style>

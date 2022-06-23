@@ -111,7 +111,7 @@ img {
 @media only screen and (max-width: 450px) {
   .benefit {
     place-items: center;
-    margin: 15% 0;
+    margin: 15% auto;
   }
 }
 </style>

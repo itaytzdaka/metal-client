@@ -40,13 +40,14 @@ h4{
 
 @media only screen and (max-width: 900px) {
   .header {
-    font-size: 1.4rem;
+    font-size: 1rem;
   }
 }
 
 @media only screen and (max-width: 450px) {
   .header {
-    font-size: 1.2rem;
+    height: 40vh;
+    font-size: 0.8rem;
   }
 }
 </style>
