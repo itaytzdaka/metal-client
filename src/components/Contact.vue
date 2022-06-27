@@ -200,6 +200,8 @@ p {
     width: 100%;
     margin: 0;
     border-radius: 0;
+    box-shadow: none;
+
   }
 
   input[type=text],

@@ -31,7 +31,7 @@ nav{
   align-items: center;
   background-color: #333;
   box-shadow: 0 0 10px 10px rgba(49, 49, 49, 0.3);
-
+  z-index: 1;
 }
 
 nav a {

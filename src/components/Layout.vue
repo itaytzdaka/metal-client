@@ -3,7 +3,11 @@
     <Navbar />
     <Header />
     <div class="main">
-      <router-view></router-view>
+      <router-view v-slot="{ Component }">
+        <transition name="route" mode="out-in">
+          <component :is="Component"></component>
+        </transition>
+      </router-view>
     </div>
     <Footer />
   </div>
@@ -35,12 +39,31 @@ export default {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  overflow: hidden;
 }
 
 .main{
   display: flex;
   flex-direction: column;
   flex-grow: 1;
+}
+
+.route-enter-from {
+  opacity: 0;
+  transform: translateX(100px);
+}
+
+.route-enter-active {
+  transition: all 0.3s ease-out;
+}
+
+.route-leave-to {
+  opacity: 0;
+  transform: translateX(-100px);
+}
+
+.route-leave-active {
+  transition: all 0.3s ease-in;
 }
 
 
