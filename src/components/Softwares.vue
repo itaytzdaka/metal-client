@@ -2,44 +2,89 @@
   <div class="softwares">
     <h2>התוכנות שלנו</h2>
     <div class="container">
-      <div class="software">
-        <img src="../assets/png/car-repair.png" alt="car-repair">
-        <h4>מיטל למוסכים</h4>
-        <p>תוכנת מוסך קלאסית, מכילה את כל הרכיבים למיחשוב המוסך. <br />
-          תוכנת מיטל מותקנת במאות מוסכים בישראל לשביעות רצונם של המשתמשים. <br />
-          התוכנה מספקת טיפול בכרטסת לקוחות וספקים, טיפול בכרטסת רכבים,
-          כרטיסי תיקון, מעקב אחרי כספים תזרים מזומנים בנקים וקופה כולל רכיב התאמת בנק
-          ומערכת הנהלת חשבונות המשלימה את המוצר.</p>
-        <router-link to="/metal">לעוד מידע</router-link>
-      </div>
-      <div class="software">
-        <img src="../assets/png/car-rental.png" alt="car-rental">
-        <h4>מיטל Rent</h4>
-        <p>תוכנה לחברות השכרה.<br />
-          חוזי השכרה על בסיס קצר או ליסינג ארוך טווח.<br />
-          ניהול טבלת מדדים לחישובי ריבית והצמדה.<br />
-          ניהול טבלת מטבעות ותמיכה בתנועות במט"ח.<br />
-          אפשרויות מגוונות לעיצוב ובניית מערכת בסטנדרטים גבוהים.<br />
-          ניהול כרטסת צי רכבים , מעקב אינטנסיבי על תנועות רווח והפסד של כל רכב, אפשרויות חיתוך כרטסת רכבים ובניית
-          טפסים שימושיים.<br />
-          דוחות התראה ומעקב ושאילתות חיתוך מגוונות. </p>
-        <router-link to="/rent">לעוד מידע</router-link>
-      </div>
-      <div class="software">
-        <img src="../assets/png/business.png" alt="business">
-        <h4>מיטל Netz</h4>
-        <p>תוכנת מדף עיסקית בסביבת חלונות שניתן להתאימה לכל עסק.<br />
-          משלבת נוחות בעבודה, גמישות ואפשרויות עיצוב, מודול הנהלת-חשבונות בנוי, ואספקת מידע עדכני לגבי
-          התנהלות העסק המסייע בקבלת החלטות ובתהליכי גבייה.</p>
-        <router-link to="/netz">לעוד מידע</router-link>
-      </div>
+      <transition-group appear @before-enter="beforeEnter" @enter="enter">
+        <div class="software" :key="software.title" v-for="(software, index) in softwares" :data-index="index">
+          <img v-bind:src="software.src" :alt="software.title">
+          <h4>{{ software.title }}</h4>
+          <p>{{ software.text }}</p>
+          <router-link :to="software.url">לעוד מידע</router-link>
+        </div>
+      </transition-group>
     </div>
   </div>
 </template>
 
 <script>
+import gsap from 'gsap'
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+
 export default {
   name: 'Softwares',
+  data() {
+    return {
+      softwares: []
+    }
+  },
+  setup() {
+    gsap.registerPlugin(ScrollTrigger);
+
+    const beforeEnter = (el) => {
+      el.style.opacity = 0;
+      el.style.transform = 'translateY(100px)';
+    };
+
+    const enter = (el) => {
+
+      gsap.to(el, {
+        scrollTrigger: {
+          trigger: el,
+          start: "40% 90%",
+          //markers: true,
+        },
+        duration: 1,
+        y: 0,
+        opacity: 1,
+        delay: el.dataset.index * 0.6
+      });
+    };
+
+    return { beforeEnter, enter }
+  },
+  created() {
+    this.softwares = [
+      {
+        src: require('../assets/png/car-repair.png'),
+        title: "מיטל למוסכים",
+        text: `תוכנת מוסך קלאסית,\n
+          מכילה את כל הרכיבים למיחשוב המוסך. \r
+          תוכנת מיטל מותקנת במאות מוסכים בישראל לשביעות רצונם של המשתמשים.\r
+          התוכנה מספקת טיפול בכרטסת לקוחות וספקים, טיפול בכרטסת רכבים,\r
+          כרטיסי תיקון, מעקב אחרי כספים תזרים מזומנים בנקים וקופה כולל רכיב התאמת בנק ומערכת הנהלת חשבונות המשלימה את המוצר.`,
+        url: "/metal"
+      },
+      {
+        src: require('../assets/png/car-rental.png'),
+        title: "מיטל Rent",
+        text: `תוכנה לחברות השכרה.\n
+          חוזי השכרה על בסיס קצר או ליסינג ארוך טווח\r
+          ניהול טבלת מדדים לחישובי ריבית והצמדה.\r
+          ניהול טבלת מטבעות ותמיכה בתנועות במט"ח.\r
+          אפשרויות מגוונות לעיצוב ובניית מערכת בסטנדרטים גבוהים.\r
+          ניהול כרטסת צי רכבים, מעקב אינטנסיבי על תנועות רווח והפסד של כל רכב, אפשרויות חיתוך כרטסת רכבים ובניית טפסים שימושיים.\r
+          דוחות התראה ומעקב ושאילתות חיתוך מגוונות.`,
+        url: "/rent"
+      },
+      {
+        src: require('../assets/png/business.png'),
+        title: "מיטל Netz",
+        text: `תוכנת מדף עיסקית בסביבת חלונות שניתן להתאימה לכל עסק.\r
+          משלבת נוחות בעבודה, גמישות ואפשרויות עיצוב, מודול הנהלת-חשבונות בנוי,\r
+          ואספקת מידע עדכני לגבי התנהלות העסק המסייע בקבלת החלטות ובתהליכי גבייה.`,
+        url: "/netz"
+      },
+    ]
+  },
   // props: {
   //   msg: String
   // }

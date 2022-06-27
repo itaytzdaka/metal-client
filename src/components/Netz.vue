@@ -1,6 +1,6 @@
 <template>
   <div class="netz">
-
+    <h2>מיטל Netz</h2>
   </div>
 </template>
 

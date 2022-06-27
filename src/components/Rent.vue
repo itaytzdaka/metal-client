@@ -1,6 +1,6 @@
 <template>
   <div class="rent">
-
+    <h2>מיטל Rent</h2>
   </div>
 </template>
 

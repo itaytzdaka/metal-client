@@ -1,6 +1,6 @@
 <template>
   <div class="metal">
-
+      <h1>מיטל למוסכים</h1>
   </div>
 </template>
 

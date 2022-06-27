@@ -3,51 +3,10 @@
     <div class="container">
       <h2>למה מיטל מחשבים?</h2>
       <transition-group appear @before-enter="beforeEnter" @enter="enter">
-        <div class="benefit" key="b1">
-          <img src="../assets/png/flexibility.png" alt="flexibility">
-          <h4>גמישות</h4>
-          <p>המשתמש יכול להתאים את התוכנה לצרכיו. ניתן לקבוע את פורמט
-            המסמכים, לשנות שדות כותרת , מבנה טורים משתתפים, ניתן לעצב את פורמט ההדפסה
-            לנייר של המסמכים ואת מבנה הדוחות.
-            מערכת פרמטרים חכמה מאפשרת לעצב את מימדי החלונות, ולהגיע לתצוגה עשירה
-            ויזואלית בשלל סגנונות גוונים וגופנים.</p>
-        </div>
-
-        <div class="benefit" key="b2">
-          <img src="../assets/png/all-inclusive.png" alt="all-inclusive">
-          <h4>הכל כלול</h4>
-          <p>תוכנות מיטל נמכרות בחבילה שלמה המכילה פתרונות כוללים להתנהלות העסקית, כולל מערכת הנהלת חשבונות בנוייה,
-            ואינן
-            בנויות ממודלים כאלה ואחרים.</p>
-        </div>
-        <div class="benefit" key="b3">
-          <img src="../assets/png/relax.png" alt="relax">
-          <h4>נוחות בעבודה</h4>
-          <p>לחצני עכבר ידידותיים, חלונות חיפוש ועזרה לאיתור מידע דרוש, מסכים מעוצבים נוחים
-            לצפייה הניתנים להגדרה, ריכוזיות מידע למסך הנוכחי.</p>
-        </div>
-        <div class="benefit" key="b4">
-          <img src="../assets/png/connectivity.png" alt="connectivity">
-          <h4>קישוריות</h4>
-          <p>לתוכנות הנהלת חשבונות נפוצות בשוק, למוצרי Microsoft Office ולמוצרים נוספים
-            של מערכת הפעלה חלונות המותקנים במחשב.</p>
-        </div>
-        <div class="benefit" key="b5">
-          <img src="../assets/png/support.png" alt="support">
-          <h4>תמיכה</h4>
-          <p>בכל סוגי המדפסות בשוק
-            בכל מערכות ההפעלה חלונות למעט חלונות 95.</p>
-        </div>
-        <div class="benefit" key="b6">
-          <img src="../assets/png/flexibility.png" alt="">
-          <h4>קישוריות למולטיקט</h4>
-          <p>תמיכה ביצירת קובץ ממשק לחשבוניות הסדר חברות ביטוח
-            לפי פורמט מ.ר.מ.</p>
-        </div>
-        <div class="benefit" key="b7">
-          <img src="../assets/png/min-requirements.png" alt="min-requirements">
-          <h4>דרישות מינימום</h4>
-          <p>פנטיום 3 400 MHZ ומעלה, זכרון מינימום 128 על גבי לוח האם.</p>
+        <div class="benefit" :key="benefit.title" v-for="benefit in benefits">
+          <img v-bind:src="benefit.src" :alt="benefit.title">
+          <h4>{{ benefit.title }}</h4>
+          <p>{{ benefit.text }}</p>
         </div>
       </transition-group>
 
@@ -62,6 +21,60 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 export default {
 
   name: 'Benefits',
+  data() {
+    return {
+      benefits: []
+    }
+  },
+  created() {
+    this.benefits = [
+      {
+        src: require('../assets/png/flexibility.png'),
+        title: "גמישות",
+        text: `המשתמש יכול להתאים את התוכנה לצרכיו. ניתן לקבוע את פורמט
+            המסמכים, לשנות שדות כותרת , מבנה טורים משתתפים, ניתן לעצב את פורמט ההדפסה
+            לנייר של המסמכים ואת מבנה הדוחות.
+            מערכת פרמטרים חכמה מאפשרת לעצב את מימדי החלונות, ולהגיע לתצוגה עשירה
+            ויזואלית בשלל סגנונות גוונים וגופנים.`
+      },
+      {
+        src: require('../assets/png/all-inclusive.png'),
+        title: "הכל כלול",
+        text: `תוכנות מיטל נמכרות בחבילה שלמה המכילה פתרונות כוללים להתנהלות העסקית, כולל מערכת הנהלת חשבונות בנוייה,
+            ואינן
+            בנויות ממודלים כאלה ואחרים.`
+      },
+      {
+        src: require('../assets/png/relax.png'),
+        title: "נוחות בעבודה",
+        text: `לחצני עכבר ידידותיים, חלונות חיפוש ועזרה לאיתור מידע דרוש, מסכים מעוצבים נוחים
+            לצפייה הניתנים להגדרה, ריכוזיות מידע למסך הנוכחי.`
+      },
+      {
+        src: require('../assets/png/connectivity.png'),
+        title: "קישוריות",
+        text: `לתוכנות הנהלת חשבונות נפוצות בשוק, למוצרי Microsoft Office ולמוצרים נוספים
+            של מערכת הפעלה חלונות המותקנים במחשב.`
+      },
+      {
+        src: require('../assets/png/support.png'),
+        title: "תמיכה",
+        text: `בכל סוגי המדפסות בשוק
+            בכל מערכות ההפעלה חלונות למעט חלונות 95.`
+      },
+      {
+        src: require('../assets/png/flexibility.png'),
+        title: "קישוריות למולטיקט",
+        text: `תמיכה ביצירת קובץ ממשק לחשבוניות הסדר חברות ביטוח
+            לפי פורמט מ.ר.מ.`
+      },
+      {
+        src: require('../assets/png/min-requirements.png'),
+        title: "דרישות מינימום",
+        text: `פנטיום 3 400 MHZ ומעלה, זכרון מינימום 128 על גבי לוח האם.`
+      }
+      ];
+  },
   setup() {
     gsap.registerPlugin(ScrollTrigger);
 
@@ -73,7 +86,11 @@ export default {
     const enter = (el) => {
 
       gsap.to(el, {
-        scrollTrigger: el,
+        scrollTrigger: {
+          trigger: el,
+          start: "center 90%",
+          //markers: true,
+        },
         duration: 1,
         x: 0,
         opacity: 1,

@@ -36,6 +36,11 @@ html{
   margin: auto;
 }
 
+p{
+  white-space: pre-line;
+  
+}
+
 
 @media only screen and (max-width: 450px) {
   :root {
