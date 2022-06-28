@@ -3,10 +3,6 @@
     <div class="box">
       <div class="flex-column contact-details">
         <div class="center">
-          <p>טלפון<br /><br />
-            03-5595936 , 03-5590294<br /><br />
-            nor@017.net.il
-          </p>
           <img src="../assets/png/contact.png" alt="contact">
         </div>
 

@@ -71,6 +71,7 @@ export default {
   min-height: 50vh;
   /* background: #eefff6; */
   background: linear-gradient(180deg, rgba(255, 255, 255, 1) 0%, rgb(224, 224, 224) 100%);
+  overflow: hidden;
 }
 
 p {
@@ -94,4 +95,13 @@ p {
 .text-enter-active {
   transition: all 1.5s ease;
 }
+
+@media only screen and (max-width: 900px) {
+
+p {
+  margin: 10% 0;
+  padding: 1% 3%;
+}
+}
+
 </style>
