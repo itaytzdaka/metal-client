@@ -2,7 +2,19 @@
   <div class="contact">
     <div class="box">
       <div class="flex-column contact-details">
+
+        <div class="letter-container">
+          <div class="letter">
+            <p>טלפון</p>
+            <p>03-5590294, 03-5595936</p>
+            <p>nor@017.net.il</p>
+          </div>
+        </div>
+
+
         <div class="center">
+
+
           <img src="../assets/png/contact.png" alt="contact">
         </div>
 
@@ -162,6 +174,65 @@ p {
   color: white;
   top: 30%;
   left: 10%;
+}
+
+.letter-container {
+  background-color: green;
+  position: relative;
+  width: 80%;
+  padding-top: 80%;
+  /* 16:9 Aspect Ratio */
+}
+
+.letter {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  text-align: center;
+  
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 70%;
+  height: 50%;
+  background: #ff5266;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.letter::after {
+  content: "";
+  position: absolute;
+  top: -68%;
+  right: 11%;
+  background-color: #ff8080;
+  margin: auto;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  border-radius: 13px;
+  transform: rotate(49deg) skewY(-10deg);
+}
+
+.letter::before {
+  content: "";
+  position: absolute;
+  bottom: -70%;
+  right: -13%;
+  background-color: #d74755;
+  margin: auto;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  border-radius: 15px;
+  transform: rotate(53deg) skewY(-15deg);
+}
+
+.letter p {
+  z-index: 5;
 }
 
 

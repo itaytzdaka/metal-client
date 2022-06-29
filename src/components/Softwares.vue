@@ -125,6 +125,10 @@ img {
 }
 
 @media only screen and (max-width: 900px) {
+  .softwares {
+    padding: 10% 0;
+  }
+
   .software {
     margin: 10% 0;
   }
