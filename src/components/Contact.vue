@@ -168,14 +168,6 @@ img {
   width: 80%;
 }
 
-p {
-  font-size: 1.5rem;
-  position: relative;
-  color: white;
-  top: 30%;
-  left: 10%;
-}
-
 .letter-container {
   background-color: green;
   position: relative;
@@ -186,21 +178,18 @@ p {
 
 .letter {
   position: absolute;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  text-align: center;
-  
   display: flex;
-  flex-direction: column;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
+  flex-direction: column;
+  padding: 10% 0;
+  top: 0;
   width: 70%;
   height: 50%;
   background: #ff5266;
   border-radius: 10px;
   overflow: hidden;
+  text-align: center;
 }
 
 .letter::after {
@@ -232,6 +221,9 @@ p {
 }
 
 .letter p {
+  position: relative;
+  color: white;
+  font-size: 1em;
   z-index: 5;
 }
 
