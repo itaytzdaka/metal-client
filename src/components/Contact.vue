@@ -12,11 +12,11 @@
         </div>
 
 
-        <div class="center">
+        <!-- <div class="center">
 
 
           <img src="../assets/png/contact.png" alt="contact">
-        </div>
+        </div> -->
 
       </div>
       <form @submit="sendEmail">
@@ -169,10 +169,11 @@ img {
 }
 
 .letter-container {
-  background-color: green;
+  /* background-color: green; */
   position: relative;
   width: 80%;
   padding-top: 80%;
+
   /* 16:9 Aspect Ratio */
 }
 
@@ -223,7 +224,7 @@ img {
 .letter p {
   position: relative;
   color: white;
-  font-size: 1em;
+  font-size: 1.5vw;
   z-index: 5;
 }
 
@@ -251,6 +252,11 @@ img {
     width: 60%;
 
   }
+
+  .letter p {
+    font-size: 2.5vw;
+  }
+
 }
 
 @media only screen and (max-width: 450px) {
@@ -267,6 +273,10 @@ img {
   input[type=email],
   textarea {
     width: 80%;
+  }
+
+  .letter p {
+    font-size: 3vw;
   }
 }
 </style>
