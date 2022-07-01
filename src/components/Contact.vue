@@ -9,6 +9,7 @@
             <p>03-5590294, 03-5595936</p>
             <p>nor@017.net.il</p>
           </div>
+          <img class="phone" src="../assets/svg/phone.svg" alt="My Happy SVG" />
         </div>
 
 
@@ -169,10 +170,12 @@ img {
 }
 
 .letter-container {
+  display: flex;
+  justify-content: center;
   /* background-color: green; */
   position: relative;
   width: 80%;
-  padding-top: 80%;
+  padding-top: 60%;
 
   /* 16:9 Aspect Ratio */
 }
@@ -186,7 +189,7 @@ img {
   padding: 10% 0;
   top: 0;
   width: 70%;
-  height: 50%;
+  height: 67%;
   background: #ff5266;
   border-radius: 10px;
   overflow: hidden;
@@ -225,6 +228,13 @@ img {
   position: relative;
   color: white;
   font-size: 1.5vw;
+  z-index: 5;
+}
+
+.phone {
+  position: absolute;
+  top: 17%;
+  left: -4%;
   z-index: 5;
 }
 
