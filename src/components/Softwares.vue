@@ -45,7 +45,7 @@ export default {
         duration: 1,
         y: 0,
         opacity: 1,
-        delay: el.dataset.index * 0.6
+        delay: el.dataset.index * 0.3
       });
     };
 

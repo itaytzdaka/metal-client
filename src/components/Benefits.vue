@@ -94,7 +94,7 @@ export default {
         duration: 1,
         x: 0,
         opacity: 1,
-        delay: 0.5
+        delay: 0.3
       });
     };
 
