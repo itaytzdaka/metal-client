@@ -1,6 +1,6 @@
 <template>
     <div class="carousel-dots">
-        <button class="carousel-dot" :class="{active: index-1==visibleSlide}" v-for="index in slidesLength"></button>
+        <button class="carousel-dot" :class="{ active: index - 1 == visibleSlide }" v-for="index in slidesLength"></button>
     </div>
 </template>
 
@@ -26,7 +26,7 @@ export default {
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
-    bottom: 10px;
+    top: 85%;
     z-index: 2;
 }
 
@@ -35,13 +35,14 @@ export default {
     width: 15px;
     margin: 0 1em;
     border-radius: 50%;
+    box-shadow: 0 0 2px black;
     border: none;
-    background-color: rgb(255, 255, 255); 
+    background-color: rgb(255, 255, 255);
     opacity: 0.5;
     cursor: pointer;
 }
 
-.active{
+.active {
     opacity: 1;
 }
 </style>

@@ -7,11 +7,12 @@
       כרטיסי תיקון, מעקב אחרי כספים תזרים מזומנים בנקים וקופה כולל רכיב התאמת בנק ומערכת הנהלת חשבונות המשלימה את המוצר.
     </p>
     <!-- <img :src="slides[0]" alt=""> -->
-    <Carousel @prev="prev" @next="next" >
-      <CarouselDots :visibleSlide="visibleSlide" :slidesLength="slides.length"></CarouselDots>
-      <CarouselSlide :direction="direction" v-for="(slide, index) in slides" :key="slide" :index="index" :visibleSlide="visibleSlide">
+    <Carousel @prev="prev" @next="next">
+      <CarouselSlide :direction="direction" v-for="(slide, index) in slides" :key="slide" :index="index"
+        :visibleSlide="visibleSlide">
         <img :src="slide" />
       </CarouselSlide>
+      <CarouselDots :visibleSlide="visibleSlide" :slidesLength="slides.length"></CarouselDots>
     </Carousel>
   </div>
 </template>
@@ -40,19 +41,19 @@ export default {
     }
   },
   computed: {
-    slidesLength(){
+    slidesLength() {
       return this.slides.length;
     }
   },
   methods: {
     next() {
-      this.visibleSlide == this.slidesLength -1? this.visibleSlide=0 : this.visibleSlide++;
-      this.direction= "right";
+      this.visibleSlide == this.slidesLength - 1 ? this.visibleSlide = 0 : this.visibleSlide++;
+      this.direction = "right";
 
     },
     prev() {
-      this.visibleSlide == 0? this.visibleSlide=this.slidesLength -1 : this.visibleSlide--;
-      this.direction= "left";
+      this.visibleSlide == 0 ? this.visibleSlide = this.slidesLength - 1 : this.visibleSlide--;
+      this.direction = "left";
     }
   }
   // props: {
@@ -63,4 +64,5 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+
 </style>
