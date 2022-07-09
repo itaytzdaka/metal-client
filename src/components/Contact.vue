@@ -228,14 +228,14 @@ img {
   position: relative;
   color: white;
   font-size: 1.5vw;
-  z-index: 5;
+  z-index: 3;
 }
 
 .phone {
   position: absolute;
   top: 17%;
   left: -4%;
-  z-index: 5;
+  z-index: 2;
 }
 
 
