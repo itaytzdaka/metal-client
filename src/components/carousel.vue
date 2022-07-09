@@ -4,7 +4,8 @@
             :visibleSlide="visibleSlide">
             <img :src="slide" />
         </CarouselSlide>
-        <CarouselDots v-if="indicators" :visibleSlide="visibleSlide" :slidesLength="slides.length" @switch="switchSlide($event)">
+        <CarouselDots v-if="indicators" :visibleSlide="visibleSlide" :slidesLength="slides.length"
+            @switch="switchSlide($event)">
         </CarouselDots>
         <button v-if="controls" @click="next()" class="next">הבא</button>
         <button v-if="controls" @click="prev()" class="prev">הקודם</button>
@@ -17,11 +18,12 @@ import CarouselDots from './carousel-dots.vue'
 
 export default {
     name: 'Carousel',
-    components: {CarouselSlide, CarouselDots},
+    components: { CarouselSlide, CarouselDots },
     data() {
         return {
             visibleSlide: 0,
-            direction: ""
+            direction: "",
+            slideInterval: null
         }
     },
     props: {
@@ -36,29 +38,58 @@ export default {
         indicators: {
             type: Boolean,
             default: false
+        },
+        interval: {
+            type: Number,
+            default: 6000
+        },
+        setInterval: {
+            type: Boolean,
+            default: false
         }
+    },
+    beforeUnmount() {
+
+    },
+    mounted() {
+        this.startSlideTimer();
     },
 
     methods: {
-    next( step = 1) {
-      this.visibleSlide < this.slides.length - 1 ? this.visibleSlide=this.visibleSlide+step : this.visibleSlide = 0;
-      this.direction = "right";
-
-    },
-    prev( step = -1 ) {
-      this.visibleSlide > 0 ? this.visibleSlide=this.visibleSlide+step : this.visibleSlide = this.slidesLength - 1;
-      this.direction = "left";
-    },
-    switchSlide(index){
-      const step = index - this.visibleSlide;
-      if(step>0){
-        this.next(step);
-      }
-      else if(step<0){
-        this.prev(step);
-      }
+        _next(step = 1) {
+            this.visibleSlide < this.slides.length - 1 ? this.visibleSlide = this.visibleSlide + step : this.visibleSlide = 0;
+            this.direction = "right";
+        },
+        next(step = 1) {
+            this._next(step);
+            this.startSlideTimer();
+        },
+        prev(step = -1) {
+            this.visibleSlide > 0 ? this.visibleSlide = this.visibleSlide + step : this.visibleSlide = this.slides.length - 1;
+            this.direction = "left";
+            this.startSlideTimer();
+        },
+        switchSlide(index) {
+            const step = index - this.visibleSlide;
+            if (step > 0) {
+                this.next(step);
+            }
+            else if (step < 0) {
+                this.prev(step);
+            }
+        },
+        startSlideTimer() {
+            if (this.setInterval) {
+                this.stopSlideTimer();
+                this.slideInterval = setInterval(() => {
+                    this._next();
+                }, this.interval);
+            }
+        },
+        stopSlideTimer() {
+            clearInterval(this.slideInterval);
+        }
     }
-  }
 }
 </script>
 

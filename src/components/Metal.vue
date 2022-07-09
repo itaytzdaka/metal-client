@@ -6,7 +6,7 @@
       התוכנה מספקת טיפול בכרטסת לקוחות וספקים, טיפול בכרטסת רכבים,
       כרטיסי תיקון, מעקב אחרי כספים תזרים מזומנים בנקים וקופה כולל רכיב התאמת בנק ומערכת הנהלת חשבונות המשלימה את המוצר.
     </p>
-    <Carousel :slides="slides" controls indicators></Carousel>
+    <Carousel :slides="slides" controls indicators setInterval interval=6000></Carousel>
 
   </div>
 </template>
