@@ -1,6 +1,6 @@
 <template>
     <div class="carousel-dots">
-        <button class="carousel-dot" :class="{ active: index - 1 == visibleSlide }" v-for="index in slidesLength"></button>
+        <button class="carousel-dot" :class="{ active: index - 1 == visibleSlide }" v-for="index in slidesLength" :key="index" @click="$emit('switch', index-1)"></button>
     </div>
 </template>
 
@@ -8,14 +8,10 @@
 
 export default {
     name: 'Carousel-dots',
-    data() {
-        return {
-
-        }
-    },
     methods: {
 
     },
+    emits: ['switch'],
     props: ['visibleSlide', "slidesLength"],
 
 }
