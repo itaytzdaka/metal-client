@@ -96,11 +96,12 @@ export default {
 <style scoped>
 .carousel {
     position: relative;
-    width: 70%;
-    padding-top: 40%;
+    width: 85%;
+    padding-top: 50%;
     /* background: red; */
     /* height: 600px; */
     overflow: hidden;
+    margin: auto;
 }
 
 button {
@@ -125,6 +126,14 @@ button:hover {
 
 .prev {
     right: 0;
+}
+
+@media only screen and (max-width: 1200px) {
+    .carousel {
+        width: 95%;
+        padding-top: 55%;
+
+    }
 }
 </style>
 
