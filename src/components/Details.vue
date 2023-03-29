@@ -72,6 +72,7 @@ export default {
   /* background: #eefff6; */
   background: linear-gradient(180deg, rgba(255, 255, 255, 1) 0%, rgb(224, 224, 224) 100%);
   overflow: hidden;
+  line-height: 30px;
 }
 
 p {
@@ -100,6 +101,7 @@ p {
 
 .details {
   padding: 10% 0;
+  line-height: 16px;
 }
 
 p {

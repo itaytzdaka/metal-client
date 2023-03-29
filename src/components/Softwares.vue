@@ -54,23 +54,24 @@ export default {
   created() {
     this.softwares = [
       {
-        src: require('../assets/png/car-repair.png'),
+        src: require('../assets/jpg/garage.jpg'),
         title: "מיטל למוסכים",
         text: `תוכנת מוסך קלאסית,\n
           מכילה את כל הרכיבים למיחשוב המוסך.`,
         url: "/metal"
       },
       {
-        src: require('../assets/png/car-rental.png'),
+        src: require('../assets/jpg/rent.jpg'),
         title: "מיטל Rent",
         text: `תוכנה לחברות השכרה.\n
           חוזי השכרה על בסיס קצר או ליסינג ארוך טווח.`,
         url: "/rent"
       },
       {
-        src: require('../assets/png/business.png'),
+        src: require('../assets/jpg/business.jpg'),
         title: "מיטל Netz",
-        text: `תוכנת מדף עיסקית בסביבת חלונות שניתן להתאימה לכל עסק.`,
+        text: `תוכנת מדף עיסקית בסביבת חלונות,\n
+        ניתן להתאימה לכל עסק.`,
         url: "/netz"
       },
     ]
@@ -97,6 +98,7 @@ export default {
 }
 
 .container {
+  width: 90%;
   display: flex;
   /* justify-content: space-around; */
 }
@@ -112,9 +114,13 @@ a {
 }
 
 img {
-  height: 100px;
-  width: 100px;
-  margin: 3% 0;
+  height: 300px;
+  width: 500px;
+  margin: 5% 0;
+}
+
+img:hover{
+  background:  linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3));
 }
 
 @media only screen and (max-width: 1200px) {

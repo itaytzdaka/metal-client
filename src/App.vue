@@ -25,6 +25,11 @@ export default {
 html{
   overflow-y: scroll;
 }
+
+:root{
+  font-size: 25px;
+}
+
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;

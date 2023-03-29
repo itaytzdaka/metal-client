@@ -86,7 +86,10 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 .contact {
-  background: linear-gradient(54deg, rgba(2, 0, 36, 1) 0%, rgba(32, 119, 157, 1) 47%, rgba(0, 212, 255, 1) 100%);
+  background-image: url("../assets/jpg/contact.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  /* background: linear-gradient(54deg, rgba(2, 0, 36, 1) 0%, rgba(32, 119, 157, 1) 47%, rgba(0, 212, 255, 1) 100%); */
   flex-grow: 1;
   display: grid;
   place-items: center;
@@ -98,8 +101,8 @@ export default {
   padding: 5% 0;
   width: 72%;
   min-height: 80%;
-  background: white;
-  border-radius: 15px;
+  background: rgba(255, 255, 255, 0.651);
+  border-radius: 5px;
   box-shadow: 0 2px 20px rgba(2, 0, 36, 0.5);
 }
 
@@ -124,15 +127,15 @@ form {
 }
 
 input {
-  height: 30px;
+  height: 40px;
 }
 
 input[type=text],
 input[type=email],
 textarea {
   background: #dbdbdb;
-  width: 50%;
-  margin: 3% 0;
+  width: 65%;
+  margin: 2% 0;
   border: none;
   border-radius: 5px;
   text-align: center;
@@ -151,7 +154,7 @@ h2 {
 button {
   color: white;
   padding: 10px 20px;
-  background: #36b36e;
+  background: #6c327e;
   border: none;
   border-radius: 15px;
   width: 30%;
@@ -161,7 +164,7 @@ button {
 }
 
 button:hover {
-  background: #277c4d;
+  background: #912e78;
 
 }
 
@@ -190,7 +193,7 @@ img {
   top: 0;
   width: 70%;
   height: 67%;
-  background: #ff5266;
+  background: #2a337e;
   border-radius: 10px;
   overflow: hidden;
   text-align: center;
@@ -201,7 +204,7 @@ img {
   position: absolute;
   top: -68%;
   right: 11%;
-  background-color: #ff8080;
+  background-color: #23295a;
   margin: auto;
   width: 100%;
   height: 100%;
@@ -215,7 +218,7 @@ img {
   position: absolute;
   bottom: -70%;
   right: -13%;
-  background-color: #d74755;
+  background-color: #23295a;
   margin: auto;
   width: 100%;
   height: 100%;
@@ -265,6 +268,12 @@ img {
 
   .letter p {
     font-size: 2.5vw;
+  }
+
+  input[type=text],
+  input[type=email],
+  textarea {
+    width: 80%;
   }
 
 }

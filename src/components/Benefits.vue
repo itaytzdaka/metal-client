@@ -119,11 +119,15 @@ export default {
 .benefit {
   display: flex;
   margin: 7% 0;
-  width: 70%;
+  /* width: 70%; */
 }
 
 h2 {
   margin: 3% 0;
+}
+
+h4{
+  min-width: 150px;
 }
 
 p {

@@ -196,9 +196,6 @@ export default {
 
 }
 
-body {
-
-}
 
 .container{
   perspective: 3000px;

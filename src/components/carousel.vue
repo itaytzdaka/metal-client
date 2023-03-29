@@ -3,12 +3,15 @@
         <CarouselSlide :direction="direction" v-for="(slide, index) in slides" :key="slide" :index="index"
             :visibleSlide="visibleSlide">
             <img :src="slide" />
+            <p>{{ text[index] }}</p>
         </CarouselSlide>
         <CarouselDots v-if="indicators" :visibleSlide="visibleSlide" :slidesLength="slides.length"
             @switch="switchSlide($event)">
         </CarouselDots>
-        <button v-if="controls" @click="next()" class="next">הבא</button>
-        <button v-if="controls" @click="prev()" class="prev">הקודם</button>
+        <!-- <button v-if="controls" @click="next()" class="next">הבא</button>
+        <button v-if="controls" @click="prev()" class="prev">הקודם</button> -->
+        <img src=".././assets/svg/left.svg" v-if="controls" @click="next()" alt="next" class="left">
+        <img src=".././assets/svg/right.svg" v-if="controls" @click="prev()" alt="right" class="right">
     </div>
 </template>
 
@@ -28,6 +31,10 @@ export default {
     },
     props: {
         slides: {
+            type: Array,
+            required: true
+        },
+        text: {
             type: Array,
             required: true
         },
@@ -120,12 +127,24 @@ button:hover {
     cursor: pointer;
 }
 
-.next {
+.left {
+    position: absolute;
+    height: 40px;
+    width: 50px;
+    top: calc(50% - 20px);
     left: 0;
+    cursor: pointer;
+
 }
 
-.prev {
+.right {
+    position: absolute;
+    height: 40px;
+    width: 50px;
+    top: calc(50% - 20px);
     right: 0;
+    cursor: pointer;
+
 }
 
 @media only screen and (max-width: 1200px) {
@@ -140,5 +159,16 @@ button:hover {
 <style>
 .carousel img {
     width: 100%;
+}
+
+.carousel p {
+    position: absolute;
+    bottom: 15%;
+    right: 50%;
+    transform: translate(50%, 0);
+    margin: auto;
+    color: white;
+    background: rgba(0, 0, 0, 0.8);
+    padding: 10px;
 }
 </style>

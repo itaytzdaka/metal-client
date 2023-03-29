@@ -27,16 +27,18 @@ export default {
 <style scoped>
 .header {
   position: relative;
-  font-size: 1.7rem;
+  font-size: 2rem;
   height: 60vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   color: aliceblue;
-  /* background: #cff5ff; */
-  background: linear-gradient(54deg, rgba(2, 0, 36, 1) 0%, rgba(32, 119, 157, 1) 47%, rgba(0, 212, 255, 1) 100%);
-  text-shadow: 0px 1px 25px rgba(0, 0, 0, 0.8)
+  background:  linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url("../assets/jpg/hero.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  /* background: linear-gradient(54deg, rgba(2, 0, 36, 1) 0%, rgba(32, 119, 157, 1) 47%, rgba(0, 212, 255, 1) 100%); */
+  text-shadow: 0px 1px 50px rgba(0, 0, 0, 0.8)
 }
 
 h4 {

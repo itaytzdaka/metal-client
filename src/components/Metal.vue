@@ -6,7 +6,7 @@
       התוכנה מספקת טיפול בכרטסת לקוחות וספקים, טיפול בכרטסת רכבים,
       כרטיסי תיקון, מעקב אחרי כספים תזרים מזומנים בנקים וקופה כולל רכיב התאמת בנק ומערכת הנהלת חשבונות המשלימה את המוצר.
     </p>
-    <Carousel :slides="slides" controls indicators setInterval interval=6000></Carousel>
+    <Carousel :slides="slides" :text="text" controls indicators setInterval interval=6000></Carousel>
 
   </div>
 </template>
@@ -25,6 +25,11 @@ export default {
         require('../assets/jpg/1.jpg'),
         require('../assets/jpg/2.jpg'),
         require('../assets/jpg/3.jpg'),
+      ],
+      text: [
+        'slide 1',
+        'slide 2',
+        'slide 3'
       ]
     }
   }
