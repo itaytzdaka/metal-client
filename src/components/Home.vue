@@ -4,6 +4,7 @@
     <Details/>
     <Softwares />
     <Benefits />
+    <Customers/>
   </div>
 </template>
 
@@ -12,6 +13,7 @@ import Header from './Header.vue';
 import Details from './Details.vue';
 import Softwares from './Softwares.vue';
 import Benefits from './Benefits.vue';
+import Customers from './Customers.vue';
 
 export default {
   name: 'Home',
@@ -19,8 +21,9 @@ export default {
     Header,
     Details,
     Softwares,
-    Benefits
-  },
+    Benefits,
+    Customers
+},
   methods: {
 
   }

@@ -1,16 +1,40 @@
 <template>
   <div class="netz">
-    <h2>מיטל Netz</h2>
-    <p>
-                משלבת נוחות בעבודה, גמישות ואפשרויות עיצוב, מודול הנהלת-חשבונות בנוי,
-          ואספקת מידע עדכני לגבי התנהלות העסק המסייע בקבלת החלטות ובתהליכי גבייה.
-    </p>
+    <div class="container">
+      <h2>מיטל Netz</h2>
+      <p>
+        משלבת נוחות בעבודה, גמישות ואפשרויות עיצוב, מודול הנהלת-חשבונות בנוי,
+        ואספקת מידע עדכני לגבי התנהלות העסק המסייע בקבלת החלטות ובתהליכי גבייה.
+      </p>
+      <Carousel :slides="slides" :text="text" controls indicators></Carousel>
+
+    </div>
   </div>
 </template>
 
 <script>
+
+import Carousel from './carousel.vue'
+
 export default {
   name: 'Netz',
+  components: {
+    Carousel
+  },
+  data() {
+    return {
+      slides: [
+        require('../assets/jpg/1.jpg'),
+        require('../assets/jpg/2.jpg'),
+        require('../assets/jpg/3.jpg'),
+      ],
+      text: [
+        'slide 1',
+        'slide 2',
+        'slide 3'
+      ]
+    }
+  }
   // props: {
   //   msg: String
   // }
@@ -19,5 +43,8 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-
+  .container{
+    width: 90%;
+    margin: auto;
+  }
 </style>

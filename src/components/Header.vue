@@ -89,13 +89,19 @@ h4 {
 @media only screen and (max-width: 900px) {
   .header {
     font-size: 1rem;
+    background:  linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../assets/jpg/hero.jpg");
+    background-position: 25%;
+    background-size: cover;
+    text-align: center;
+
   }
 }
 
 @media only screen and (max-width: 450px) {
   .header {
     height: 40vh;
-    font-size: 0.8rem;
+    font-size: 1.2rem;
+    padding: 0 10%;
   }
 }
 </style>

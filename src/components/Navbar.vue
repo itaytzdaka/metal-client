@@ -67,4 +67,13 @@ li {
 li a:hover {
   background-color: #111;
 }
+
+
+
+@media only screen and (max-width: 450px) {
+  #metal-logo{
+  width: 100px;
+  /* height: auto; */
+}
+}
 </style>

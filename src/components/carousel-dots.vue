@@ -22,7 +22,7 @@ export default {
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
-    top: 85%;
+    top: 90%;
     z-index: 2;
 }
 
@@ -33,7 +33,7 @@ export default {
     border-radius: 50%;
     box-shadow: 0 0 2px black;
     border: none;
-    background-color: rgb(255, 255, 255);
+    background-color: rgb(82, 76, 179);
     opacity: 0.5;
     cursor: pointer;
 }

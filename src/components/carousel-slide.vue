@@ -22,7 +22,8 @@ export default {
 <style scoped>
 .carousel-slide{
     position: absolute;
-    top: 0
+    top: 0;
+    height: 100%;
 }
 
 .left-enter-active {

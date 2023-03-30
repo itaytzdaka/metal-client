@@ -102,9 +102,12 @@ export default {
 
 <style scoped>
 .carousel {
+    display: flex;
     position: relative;
+    justify-content: center;
     width: 85%;
     padding-top: 50%;
+    background-color: rgb(95, 95, 95);
     /* background: red; */
     /* height: 600px; */
     overflow: hidden;
@@ -112,7 +115,7 @@ export default {
 }
 
 button {
-    color: white;
+    color: rgb(255, 255, 255);
     background: rgba(0, 0, 0, 0.6);
     position: absolute;
     border: none;
@@ -155,10 +158,12 @@ button:hover {
     }
 }
 </style>
-
 <style>
+
 .carousel img {
-    width: 100%;
+    height: 100%;
+    max-width: 100%;
+    object-fit: contain;
 }
 
 .carousel p {
@@ -170,5 +175,4 @@ button:hover {
     color: white;
     background: rgba(0, 0, 0, 0.8);
     padding: 10px;
-}
-</style>
+}</style>

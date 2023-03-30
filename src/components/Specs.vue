@@ -161,10 +161,10 @@ export default {
 
 
       const xAxis = (($event.target.parentElement.offsetWidth /2 ) - $event.layerX) / 300;
-      const yAxis = ($event.layerY - $event.target.parentElement.offsetHeight /3 ) / 10;
+      const yAxis = ($event.layerY - $event.target.parentElement.offsetHeight /3 ) / 100;
 
       console.log("xAxis: " + xAxis + " yAxis: " +  yAxis);
-      $event.target.parentElement.className == "spec" ? $event.target.parentElement.style.transform = `rotateY(${xAxis}deg) rotateX(${yAxis}deg) scale(110%)` : "";
+      $event.target.parentElement.className == "spec" ? $event.target.parentElement.style.transform = `rotateY(${xAxis}deg) rotateX(${yAxis}deg) scale(100%)` : "";
       console.log($event);
       console.log($event.target.parentElement.className);
     },
