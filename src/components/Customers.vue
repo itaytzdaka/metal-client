@@ -1,11 +1,11 @@
 <template>
   <div class="customers">
-    <h3>מעל 1000 לקוחות שעובדים איתנו</h3>
+    <h3>מעל 500 בתי עסק שעובדים איתנו</h3>
     <div class="main-scroll">
       <img src=".././assets/svg/right.svg" class="icon" @click="right()">
       <div class="cover">
         <div class="scroll-images">
-          <div class="child" v-for="(url) in customers"><img class="child-img" :src="url" alt="img"></div>
+          <div class="child" v-for="(customer) in customers"><img class="child-img" :title="customer.title" :src="customer.src" alt="img"></div>
         </div>
       </div>
       <img src=".././assets/svg/left.svg" class="icon" @click="left()">
@@ -28,18 +28,71 @@ export default {
   },
   created() {
     this.customers = [
-      require('../assets/svg/Metal-logo.svg'),
-      require('../assets/svg/Metal-logo.svg'),
-      require('../assets/svg/Metal-logo.svg'),
-      require('../assets/svg/Metal-logo.svg'),
-      require('../assets/svg/Metal-logo.svg'),
-      require('../assets/svg/Metal-logo.svg'),
-      require('../assets/svg/Metal-logo.svg'),
-      require('../assets/svg/Metal-logo.svg'),
-      require('../assets/svg/Metal-logo.svg'),
-      require('../assets/svg/Metal-logo.svg'),
-      require('../assets/svg/Metal-logo.svg'),
-      require('../assets/svg/Metal-logo.svg'),
+      {
+        src: require('../assets/svg/Metal-logo.svg'),
+        title: "Metal",
+      },
+      {
+        src: require('../assets/svg/Metal-logo.svg'),
+        title: "Metal",
+      },
+      {
+        src: require('../assets/svg/Metal-logo.svg'),
+        title: "Metal",
+      },
+      {
+        src: require('../assets/svg/Metal-logo.svg'),
+        title: "Metal",
+      },
+      {
+        src: require('../assets/svg/Metal-logo.svg'),
+        title: "Metal",
+      },
+      {
+        src: require('../assets/svg/Metal-logo.svg'),
+        title: "Metal",
+      },
+      {
+        src: require('../assets/svg/Metal-logo.svg'),
+        title: "Metal",
+      },
+      {
+        src: require('../assets/svg/Metal-logo.svg'),
+        title: "Metal",
+      },
+      {
+        src: require('../assets/svg/Metal-logo.svg'),
+        title: "Metal",
+      },
+      {
+        src: require('../assets/svg/Metal-logo.svg'),
+        title: "Metal",
+      },
+      {
+        src: require('../assets/svg/Metal-logo.svg'),
+        title: "Metal",
+      },
+      {
+        src: require('../assets/svg/Metal-logo.svg'),
+        title: "Metal",
+      },
+      {
+        src: require('../assets/svg/Metal-logo.svg'),
+        title: "Metal",
+      },
+      {
+        src: require('../assets/svg/Metal-logo.svg'),
+        title: "Metal",
+      },
+      {
+        src: require('../assets/svg/Metal-logo.svg'),
+        title: "Metal",
+      },
+      {
+        src: require('../assets/svg/Metal-logo.svg'),
+        title: "Metal",
+      },
+      
     ]
   },
   methods: {
