@@ -5,7 +5,8 @@
       <img src=".././assets/svg/right.svg" class="icon" @click="right()">
       <div class="cover">
         <div class="scroll-images">
-          <div class="child" v-for="(customer) in customers"><img class="child-img" :title="customer.title" :src="customer.src" alt="img"></div>
+          <div class="child" v-for="(customer) in customers"><img class="child-img" :title="customer.title"
+              :src="customer.src" alt="img"></div>
         </div>
       </div>
       <img src=".././assets/svg/left.svg" class="icon" @click="left()">
@@ -29,82 +30,85 @@ export default {
   created() {
     this.customers = [
       {
-        src: require('../assets/svg/Metal-logo.svg'),
-        title: "Metal",
+        src: require(`../assets/customers/צמיגי תלפיות.jpeg`),
+        title: `צמיגי תלפיות בע"מ`,
       },
       {
-        src: require('../assets/svg/Metal-logo.svg'),
-        title: "Metal",
+        src: require(`../assets/customers/מוסך יעקב.jpg`),
+        title: `מוסך יעקב`,
       },
       {
-        src: require('../assets/svg/Metal-logo.svg'),
-        title: "Metal",
+        src: require(`../assets/customers/מוסך המיישרים.jpg`),
+        title: `מוסך המיישרים-חלווה בע"מ`,
       },
       {
-        src: require('../assets/svg/Metal-logo.svg'),
-        title: "Metal",
+        src: require(`../assets/customers/מוסך איכות.jpg`),
+        title: `מוסך איכות`,
       },
       {
-        src: require('../assets/svg/Metal-logo.svg'),
-        title: "Metal",
+        src: require(`../assets/customers/coinamaticlogo.png`),
+        title: `קוינאמטיק ישראל`,
       },
       {
-        src: require('../assets/svg/Metal-logo.svg'),
-        title: "Metal",
+        src: require(`../assets/customers/עופר שירותי רכב.png`),
+        title: `עופר שירותי רכב`,
       },
       {
-        src: require('../assets/svg/Metal-logo.svg'),
-        title: "Metal",
+        src: require(`../assets/customers/מוסך לירון בעמ.jpg`),
+        title: `מוסך לירון בע"מ`,
       },
       {
-        src: require('../assets/svg/Metal-logo.svg'),
-        title: "Metal",
+        src: require(`../assets/customers/בן-חיון מוסך א.ישראל.jpg`),
+        title: `בן-חיון מוסך א.ישראל בע"מ`,
       },
       {
-        src: require('../assets/svg/Metal-logo.svg'),
-        title: "Metal",
+        src: require(`../assets/customers/אחים שאלתיאל מוסך נאמן בעמ.jpg`),
+        title: `אחים שאלתיאל מוסך נאמן בע"מ`,
       },
       {
-        src: require('../assets/svg/Metal-logo.svg'),
-        title: "Metal",
+        src: require(`../assets/customers/מוסך צמרת רפי אסרף בעמ.jpg`),
+        title: `מוסך צמרת רפי אסרף בע"מ`,
       },
       {
-        src: require('../assets/svg/Metal-logo.svg'),
-        title: "Metal",
+        src: require(`../assets/customers/מוסך המומחה בעמ.jpg`),
+        title: `מוסך המומחה בע"מ`,
       },
       {
-        src: require('../assets/svg/Metal-logo.svg'),
-        title: "Metal",
+        src: require(`../assets/customers/מוסך גליסקור.jpg`),
+        title: `מוסך גליסקור`,
       },
       {
-        src: require('../assets/svg/Metal-logo.svg'),
-        title: "Metal",
+        src: require(`../assets/customers/מוסך רעים בעמ.jpg`),
+        title: `מוסך רעים בע"מ`,
       },
       {
-        src: require('../assets/svg/Metal-logo.svg'),
-        title: "Metal",
+        src: require(`../assets/customers/א.א קרמן פרונט בעמ.png`),
+        title: `א.א קרמן פרונט בע"מ`,
       },
       {
-        src: require('../assets/svg/Metal-logo.svg'),
-        title: "Metal",
+        src: require(`../assets/customers/מוסך שני האומנים ירושלים בעמ.jpg`),
+        title: `מוסך שני האומנים ירושלים בע"מ`,
       },
       {
-        src: require('../assets/svg/Metal-logo.svg'),
-        title: "Metal",
+        src: require(`../assets/customers/און קור מאירי כפיר.jpg`),
+        title: `און קור מאירי כפיר`,
       },
-      
+      {
+        src: require(`../assets/customers/מושיתו הפחח 1998 בעמ.jpg`),
+        title: `מושיתו הפחח 1998 בע"מ`,
+      },
     ]
   },
   methods: {
     left() {
       console.log("left: ", this.$el.querySelector(".scroll-images"));
       const left = this.$el.querySelector(".scroll-images");
-      left.scrollBy(-350, 0);
+      left.scrollBy(-250, 0);
     },
     right() {
       console.log("right: ", this.$el.querySelector(".scroll-images"));
       const right = this.$el.querySelector(".scroll-images");
-      right.scrollBy(350, 0);
+      right.scrollBy(250, 0);
     }
   }
   // props: {
@@ -195,6 +199,7 @@ h3 {
 }
 
 .child-img {
+  background: white;
   width: 150px;
   height: 100%;
 }
@@ -210,13 +215,17 @@ h3 {
   cursor: pointer;
 }
 
-@media only screen and (max-width: 900px) {}
+@media only screen and (max-width: 700px) {
+  .cover {
+    width: 70%;
+  }
+}
 
-@media only screen and (max-width: 450px) {
+@media only screen and (max-width: 400px) {
 
   .main-scroll {
-    width: 80%;
-    
+    width: 90%;
+
   }
 
   .icon {
@@ -226,15 +235,24 @@ h3 {
   }
 
   .child {
-  min-width: 100px;
-  height: 100px;
-  overflow: hidden;
-}
+    min-width: 100px;
+    height: 100px;
+    overflow: hidden;
+  }
 
-.child-img {
-  width: 100px;
-  height: 100%;
-}
+  .child-img {
+    width: 100px;
+    height: 100%;
+  }
+
+  .cover {
+    width: 87%;
+  }
+
+  .cover::before,
+  .cover::after {
+    width: 50px;
+  }
 
 }
 </style>
