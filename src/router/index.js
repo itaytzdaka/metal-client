@@ -6,6 +6,7 @@ import Rent from '../components/Rent';
 import Netz from '../components/Netz';
 import Specs from '../components/Specs';
 import Contact from '../components/Contact';
+import Downloads from '../components/Downloads';
 
 const routes=[
     {
@@ -37,6 +38,11 @@ const routes=[
         path: '/contact',
         name: 'Contact',
         component: Contact
+    },
+    {
+        path: '/downloads',
+        name: 'Downloads',
+        component: Downloads
     }
 ];
 

@@ -7,8 +7,8 @@
           <router-link to="/"><img id="metal-logo" src="../assets/svg/Metal-logo.svg" alt="metal-logo"></router-link>
         </li>
         <li><router-link to="/specs">מפרט טכני</router-link></li>
-        <!-- <li><router-link to="#">מסכי דוגמה</router-link></li> -->
         <li><router-link to="/contact">יצירת קשר</router-link></li>
+        <li><router-link to="/downloads">הורדות</router-link></li>
       </ul>
     </nav>
   </div>
@@ -25,8 +25,7 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-
-nav{
+nav {
   position: relative;
   display: flex;
   align-items: center;
@@ -44,12 +43,12 @@ nav a {
   text-decoration: none;
 }
 
-#metal-logo{
+#metal-logo {
   width: 150px;
   height: auto;
 }
 
-span{
+span {
   margin: 0 2%;
 }
 
@@ -70,10 +69,25 @@ li a:hover {
 
 
 
-@media only screen and (max-width: 450px) {
-  #metal-logo{
-  width: 100px;
-  /* height: auto; */
-}
+@media only screen and (max-width: 650px) {
+  #metal-logo {
+    width: 100px;
+    /* height: auto; */
+  }
+
+  ul{
+    display: flex;
+    align-items: center;
+    flex-grow: 1;
+    justify-content: space-around;
+  }
+
+  li{
+    float: none;
+  }
+
+  nav a{
+    margin: 0;
+  }
 }
 </style>
