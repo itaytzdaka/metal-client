@@ -1,7 +1,7 @@
 <template>
   <div class="footer">
     <div class="container">
-      <span>עיצוב והקמה: מיטל מחשבים. כל הזכויות שמורות.</span>
+      <span>עיצוב והקמה: מיטל מחשבים. כל הזכויות שמורות לאיתי צדקה.</span>
       <span class="ltr">©2003-{{ date.getFullYear() }} Metal Computers All Rights Reserved.</span>
     </div>
   </div>

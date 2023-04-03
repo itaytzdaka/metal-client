@@ -29,7 +29,7 @@ export default {
   created() {
     this.benefits = [
       {
-        src: require('../assets/png/flexibility.png'),
+        src: require('../assets/svg/Metal-logo.svg'),
         title: "גמישות",
         text: `המשתמש יכול להתאים את התוכנה לצרכיו. ניתן לקבוע את פורמט
             המסמכים, לשנות שדות כותרת , מבנה טורים משתתפים, ניתן לעצב את פורמט ההדפסה
@@ -38,38 +38,37 @@ export default {
             ויזואלית בשלל סגנונות גוונים וגופנים.`
       },
       {
-        src: require('../assets/png/all-inclusive.png'),
+        src: require('../assets/svg/Metal-logo.svg'),
         title: "הכל כלול",
-        text: `תוכנות מיטל נמכרות בחבילה שלמה המכילה פתרונות כוללים להתנהלות העסקית, כולל מערכת הנהלת חשבונות בנוייה,
-            ואינן
-            בנויות ממודלים כאלה ואחרים.`
+        text: `תוכנות מיטל נמכרות בחבילה שלמה המכילה פתרונות כוללים להתנהלות העסקית, כולל מערכת הנהלת חשבונות,
+            ואינן בנויות ממודלים כאלה ואחרים.`
       },
       {
-        src: require('../assets/png/relax.png'),
+        src: require('../assets/svg/Metal-logo.svg'),
         title: "נוחות בעבודה",
         text: `לחצני עכבר ידידותיים, חלונות חיפוש ועזרה לאיתור מידע דרוש, מסכים מעוצבים נוחים
             לצפייה הניתנים להגדרה, ריכוזיות מידע למסך הנוכחי.`
       },
       {
-        src: require('../assets/png/connectivity.png'),
+        src: require('../assets/svg/Metal-logo.svg'),
         title: "קישוריות",
         text: `לתוכנות הנהלת חשבונות נפוצות בשוק, למוצרי Microsoft Office ולמוצרים נוספים
             של מערכת הפעלה חלונות המותקנים במחשב.`
       },
       {
-        src: require('../assets/png/support.png'),
+        src: require('../assets/svg/Metal-logo.svg'),
         title: "תמיכה",
         text: `בכל סוגי המדפסות בשוק
             בכל מערכות ההפעלה חלונות למעט חלונות 95.`
       },
       {
-        src: require('../assets/png/flexibility.png'),
+        src: require('../assets/svg/Metal-logo.svg'),
         title: "קישוריות למולטיקט",
         text: `תמיכה ביצירת קובץ ממשק לחשבוניות הסדר חברות ביטוח
             לפי פורמט מ.ר.מ.`
       },
       {
-        src: require('../assets/png/min-requirements.png'),
+        src: require('../assets/svg/Metal-logo.svg'),
         title: "דרישות מינימום",
         text: `פנטיום 3 400 MHZ ומעלה, זכרון מינימום 128 על גבי לוח האם.`
       }
@@ -128,10 +127,13 @@ h2 {
 
 h4{
   min-width: 150px;
+  padding: 0 20px;
+  text-align: center;
+  /* margin: auto; */
 }
 
 p {
-  padding: 3% 3%;
+  padding: 0 3%;
   flex-grow: 1;
 }
 
@@ -141,8 +143,10 @@ a {
 }
 
 img {
-  height: 150px;
+  height: 105px;
+  /* height: 150px; */
   width: 150px;
+  transform: translateY(-50%);
 }
 
 /* .benefit-enter-from {

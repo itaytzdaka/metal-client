@@ -54,10 +54,17 @@ export default {
   created() {
     this.softwares = [
       {
+        src: require('../assets/jpg/business.jpg'),
+        title: "מיטל Netz",
+        text: `תוכנת מדף עיסקית בסביבת חלונות,\n
+        כוללת הנהלת חשבונות.`,
+        url: "/netz"
+      },
+      {
         src: require('../assets/jpg/garage.jpg'),
         title: "מיטל למוסכים",
-        text: `תוכנת מוסך קלאסית,\n
-          מכילה את כל הרכיבים למיחשוב המוסך.`,
+        text: `תוכנת ניהול מוסך\n
+          מכילה את כל הפתרונות לניהול המוסך.`,
         url: "/metal"
       },
       {
@@ -66,14 +73,8 @@ export default {
         text: `תוכנה לחברות השכרה.\n
           חוזי השכרה על בסיס קצר או ליסינג ארוך טווח.`,
         url: "/rent"
-      },
-      {
-        src: require('../assets/jpg/business.jpg'),
-        title: "מיטל Netz",
-        text: `תוכנת מדף עיסקית בסביבת חלונות,\n
-        ניתן להתאימה לכל עסק.`,
-        url: "/netz"
-      },
+      }
+
     ]
   },
   // props: {
@@ -108,9 +109,18 @@ p {
   flex-grow: 1;
 }
 
+
 a {
-  margin: 3% 0;
-  color: inherit;
+  cursor: pointer;
+  border: none;
+  padding: 3px 5px;
+  background-color: rgb(195, 43, 226);
+  color: white;
+  text-decoration: none;
+}
+
+a:hover {
+  background: linear-gradient(#64a7e6, #e764e7);
 }
 
 img {
@@ -119,8 +129,8 @@ img {
   margin: 5% 0;
 }
 
-img:hover{
-  background:  linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3));
+img:hover {
+  background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3));
 }
 
 @media only screen and (max-width: 1200px) {
