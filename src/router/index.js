@@ -7,6 +7,7 @@ import Netz from '../components/Netz';
 import Specs from '../components/Specs';
 import Contact from '../components/Contact';
 import Downloads from '../components/Downloads';
+import Motors from '../components/Motors';
 
 const routes=[
     {
@@ -43,7 +44,12 @@ const routes=[
         path: '/downloads',
         name: 'Downloads',
         component: Downloads
-    }
+    },
+    {
+        path: '/motors',
+        name: 'Motors',
+        component: Motors
+    },
 ];
 
 const router = createRouter({

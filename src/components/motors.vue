@@ -1,10 +1,9 @@
 <template>
-  <div class="netz">
+  <div class="motors">
     <div class="container">
-      <h2>מיטל Netz</h2>
+      <h2>מיטל מגרשים</h2>
       <p>
-        משלבת נוחות בעבודה, גמישות ואפשרויות עיצוב, מודול הנהלת-חשבונות בנוי,
-        ואספקת מידע עדכני לגבי התנהלות העסק המסייע בקבלת החלטות ובתהליכי גבייה.
+
       </p>
       <Carousel :slides="slides" :text="text" controls indicators></Carousel>
 
@@ -17,7 +16,7 @@
 import Carousel from './carousel.vue'
 
 export default {
-  name: 'Netz',
+  name: 'Motors',
   components: {
     Carousel
   },

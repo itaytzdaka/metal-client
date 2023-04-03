@@ -3,8 +3,13 @@
     <div class="container">
       <h2>מפרט טכני</h2>
       <p>המפרט הטכני תקף בכל מוצרי התוכנה שלנו</p>
-
+      <!-- 
       <div class="spec" :key="spec.title" v-for="spec in specs" @mousemove="anim($event)" @mouseleave="outDiv($event)" @mouseenter="inDiv($event)">
+        <img v-bind:src="spec.src" :alt="spec.title">
+        <h4>{{ spec.title }}</h4>
+        <p>{{ spec.text }}</p>
+      </div> -->
+      <div class="spec" :key="spec.title" v-for="spec in specs">
         <img v-bind:src="spec.src" :alt="spec.title">
         <h4>{{ spec.title }}</h4>
         <p>{{ spec.text }}</p>
@@ -25,22 +30,22 @@ export default {
   created() {
     this.specs = [
       {
+        src: require('../assets/png/inventory2.png'),
+        title: "מערכת רכש",
+        text: `כרטסת ספקים, הפקת תעודות כניסה וחשבוניות ספקים. איתור מחיר קניה נמוך ו/או אחרון.\r
+          ניתוב הקנייה/ההוצאה לרכיב ההוצאות המתאים, תמיכה בקניות פטורות מע"מ.\r
+          הקמת פריט או רכיב מלאי בזמן הקלדת חשבונית ספק.\r
+          אפשרות להקלדת תעודת משלוח ספקים וריכוז לחשבונית ספק תוך בקרה בסוף חודש.`
+      },
+      {
         src: require('../assets/png/invoice2.png'),
         title: "מערכת שיווק",
         text: `ניהול כרטסת לקוחות, הפקת חשבוניות מס בהקפה, חשבוניות מס קבלה, ת.משלוח ועוד.\r
-          אפשרות לריכוז אוטומטי/ידני של ת.משלוח ו/או כרטיסי עבודה לחשבוניות מרכזות סוף חודש.\r
+          אפשרות לריכוז אוטומטי/ידני של תעודת משלוח ו/או כרטיסי עבודה לחשבוניות מרכזות סוף חודש.\r
           בחשבונית המרכזת אופצייה לפרט/לא לפרט את רכיבי המסמכים שבה.\r
           תמיכה בהזמנות ובהצעות מחיר ואפשרות סגירתן כאסמכתא ל-ת.משלוח או לחשבונית מס.\r
           לכל מסמך פורמט עיצוב משלו ומבנה הדפסה הניתן להגדרה ולשינוי.\r
           מעקב אחרי הלקוח מזוויות רבות, התפלגות שנתית, תצוגה גרפית, היסטוריה של לקוח ניהול וניתוח יתרה.`
-      },
-      {
-        src: require('../assets/png/inventory.png'),
-        title: "מערכת רכש",
-        text: `כרטסת ספקים, הפקת תעודות כניסה וחשבוניות ספקים. איתור מחיר קניה נמוך ו/או אחרון.\r
-          ניתוב הקנייה/ההוצאה לרכיב ההוצאות המתאים,תמיכה בקניות פטורות מעמ.\r
-          הקמת פריט או רכיב מלאי בזמן הקלדת חשבונית ספק.\r
-          אפשרות להקלדת ת.משלוח ספקים וריכוז לחשבונית ספק תוך בקרה בסוף חודש.`
       },
       {
         src: require('../assets/png/cashbox.png'),
@@ -49,6 +54,13 @@ export default {
           דוח מעקב אובליגו ודוחות שיקים דחויים. איתור שיק לפי מגוון מאפיינים. טיפול בשיקים חוזרים ובטופס הוצאה
           מהקופה\r
           ניהול מס רב של כרטיסי קופה ו/או כרטיסי בנק.`
+      },
+      {
+        src: require('../assets/png/forklift2.png'),
+        title: "ניהול מלאי",
+        text: `ניהול כרטסת מלאי שאינה מוגבלת במימדיה. מערכת מעקב יתרות. דוחות מעקב התפלגות פריט חודשית ושנתית, דוח רווח
+          לפריט,\r
+          דוח רווח והפסד והתפלגות שנתית של פריט, השוואת מחיר קנייה/מכירה דוחות מלאי לרכיבים מומלצים להזמנה.`
       },
       {
         src: require('../assets/png/windows.png'),
@@ -61,13 +73,6 @@ export default {
         title: "התאמות",
         text: `התאמות כרטיסים והתאמת בנק נוחה וחכמה לתיפעול.ההתאמה ידנית ו/או אוטומטית.תמיכה ביצירת פעולות יומן מתוך מסך
           ההתאמה.`
-      },
-      {
-        src: require('../assets/png/forklift2.png'),
-        title: "ניהול מלאי",
-        text: `ניהול כרטסת מלאי שאינה מוגבלת במימדיה. מערכת מעקב יתרות. דוחות מעקב התפלגות פריט חודשית ושנתית, דוח רווח
-          לפריט,\r
-          דוח רווח והפסד והתפלגות שנתית של פריט, השוואת מחיר קנייה/מכירה דוחות מלאי לרכיבים מומלצים להזמנה.`
       },
       {
         src: require('../assets/png/report.png'),
@@ -142,48 +147,48 @@ export default {
 
     },
     anim($event) {
-      console.log("anim");
-      console.log($event.target.parentElement);
-      console.log("height: "+$event.target.parentElement.offsetHeight);
-      console.log("widht: "+$event.target.parentElement.offsetWidth);
+      //   console.log("anim");
+      //   console.log($event.target.parentElement);
+      //   console.log("height: "+$event.target.parentElement.offsetHeight);
+      //   console.log("widht: "+$event.target.parentElement.offsetWidth);
 
-      console.log("clientX: " + $event.clientX + " clientY: " +  $event.clientY);
-      console.log("layerX: " + $event.layerX + " layerY: " +  $event.layerY);
-      console.log("offsetX: " + $event.offsetX + " offsetY: " +  $event.offsetY);
-      console.log("pageX: " + $event.pageX + " pageY: " +  $event.pageY);
-      console.log("screenX: " + $event.screenX + " screenY: " +  $event.screenY);
-      console.log("x: " + $event.x + " y: " +  $event.y);
+      //   console.log("clientX: " + $event.clientX + " clientY: " +  $event.clientY);
+      //   console.log("layerX: " + $event.layerX + " layerY: " +  $event.layerY);
+      //   console.log("offsetX: " + $event.offsetX + " offsetY: " +  $event.offsetY);
+      //   console.log("pageX: " + $event.pageX + " pageY: " +  $event.pageY);
+      //   console.log("screenX: " + $event.screenX + " screenY: " +  $event.screenY);
+      //   console.log("x: " + $event.x + " y: " +  $event.y);
 
-      console.log("innerWidth: " + window.innerWidth + " innerHeight: " +  window.innerHeight);
-      console.log("pageX: " + $event.pageX + " pageY: " +  $event.pageY);
-
-
+      //   console.log("innerWidth: " + window.innerWidth + " innerHeight: " +  window.innerHeight);
+      //   console.log("pageX: " + $event.pageX + " pageY: " +  $event.pageY);
 
 
-      const xAxis = (($event.target.parentElement.offsetWidth /2 ) - $event.layerX) / 300;
-      const yAxis = ($event.layerY - $event.target.parentElement.offsetHeight /3 ) / 100;
 
-      console.log("xAxis: " + xAxis + " yAxis: " +  yAxis);
-      $event.target.parentElement.className == "spec" ? $event.target.parentElement.style.transform = `rotateY(${xAxis}deg) rotateX(${yAxis}deg) scale(100%)` : "";
-      console.log($event);
-      console.log($event.target.parentElement.className);
+
+      //   const xAxis = (($event.target.parentElement.offsetWidth /2 ) - $event.layerX) / 300;
+      //   const yAxis = ($event.layerY - $event.target.parentElement.offsetHeight /3 ) / 100;
+
+      //   console.log("xAxis: " + xAxis + " yAxis: " +  yAxis);
+      //   $event.target.parentElement.className == "spec" ? $event.target.parentElement.style.transform = `rotateY(${xAxis}deg) rotateX(${yAxis}deg) scale(100%)` : "";
+      //   console.log($event);
+      //   console.log($event.target.parentElement.className);
+      // },
+      // outDiv($event) {
+      //   console.log("outDiv");
+      //   $event.target.parentElement.className == "spec" ? $event.target.parentElement.style.transform = `rotateY(0) rotateX(0) scale(1) scale(100%)` : $event.target.style.transform = `rotateY(0) rotateX(0) scale(1) scale(100%)`;
+      //   $event.target.parentElement.className == "spec" ? $event.target.parentElement.style.transition = `all 0.5s ease` : $event.target.style.transition = `all 0.5s ease`;
+
+      //   console.log($event);
+      //   console.log($event.target.parentElement.className);
+      // },
+      // inDiv($event) {
+      //   console.log("inDiv");
+      //   $event.target.parentElement.className == "spec" ? $event.target.parentElement.style.transition = `none` : $event.target.style.transition = `none`;
+      // }
     },
-    outDiv($event) {
-      console.log("outDiv");
-      $event.target.parentElement.className == "spec" ? $event.target.parentElement.style.transform = `rotateY(0) rotateX(0) scale(1) scale(100%)` : $event.target.style.transform = `rotateY(0) rotateX(0) scale(1) scale(100%)`;
-      $event.target.parentElement.className == "spec" ? $event.target.parentElement.style.transition = `all 0.5s ease` : $event.target.style.transition = `all 0.5s ease`;
-
-      console.log($event);
-      console.log($event.target.parentElement.className);
-    },
-    inDiv($event) {
-      console.log("inDiv");
-      $event.target.parentElement.className == "spec" ? $event.target.parentElement.style.transition = `none` : $event.target.style.transition = `none`;
-    }
-  },
-  // props: {
-  //   msg: String
-  // }
+    // props: {
+    //   msg: String
+  }
 }
 </script>
 
@@ -197,7 +202,7 @@ export default {
 }
 
 
-.container{
+.container {
   perspective: 3000px;
 
 }
@@ -206,7 +211,7 @@ export default {
 
 .spec {
   display: flex;
-  margin: 10% 0;
+  margin: 5% 0;
   width: 80%;
   /* transform-style: preserve-3d; */
 }

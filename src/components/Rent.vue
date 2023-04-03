@@ -26,7 +26,7 @@ export default {
       slides: [
         require('../assets/jpg/1.jpg'),
         require('../assets/jpg/2.jpg'),
-        require('../assets/jpg/3.jpg'),
+        
       ],
       text: [
         'slide 1',
