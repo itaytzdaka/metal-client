@@ -78,7 +78,7 @@ export default {
         src: require('../assets/jpg/by cars.jpg'),
         title: "מיטל מגרשים",
         text: `תוכנה למגרשי רכב.\n
-          `,
+        ניהול קניה ומכירת רכבים.`,
         url: "/motors"
       }
 

@@ -28,8 +28,6 @@ export default {
       ],
       text: [
         'slide 1',
-        'slide 2',
-        'slide 3'
       ]
     }
   }
@@ -41,8 +39,12 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-  .container{
-    width: 90%;
-    margin: auto;
-  }
+.container{
+  width: 90%;
+  margin: 20px auto;
+}
+
+p{
+  margin: 20px 0;
+}
 </style>
