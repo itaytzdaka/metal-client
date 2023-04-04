@@ -207,7 +207,9 @@ export default {
 
 }
 
-
+h4{
+  width: 200px;
+}
 
 .spec {
   display: flex;
@@ -255,6 +257,8 @@ img {
   img {
     display: block;
     margin: 10% auto;
+    width: 40%;
+    height: auto;
   }
 }
 </style>

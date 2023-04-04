@@ -73,6 +73,13 @@ export default {
         text: `תוכנה לחברות השכרה.\n
           חוזי השכרה על בסיס קצר או ליסינג ארוך טווח.`,
         url: "/rent"
+      },
+      {
+        src: require('../assets/jpg/by cars.jpg'),
+        title: "מיטל מגרשים",
+        text: `תוכנה למגרשי רכב.\n
+          `,
+        url: "/motors"
       }
 
     ]
@@ -94,13 +101,14 @@ export default {
   display: flex;
   flex-direction: column;
   place-items: center;
-  margin: 5% 0;
-  flex-basis: 100%;
+  margin: 1% 0;
+  flex-basis: 50%;
 }
 
 .container {
   width: 90%;
   display: flex;
+  flex-wrap: wrap;
   /* justify-content: space-around; */
 }
 
@@ -136,7 +144,13 @@ img:hover {
 @media only screen and (max-width: 1200px) {
   .container {
     flex-direction: column;
+    margin: 0;
+    width: 100%;
     /* justify-content: space-around; */
+  }
+
+  img{
+    width: 100%;
   }
 }
 

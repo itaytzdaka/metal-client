@@ -126,7 +126,7 @@ h2 {
 }
 
 h4{
-  min-width: 150px;
+  width: 200px;
   padding: 0 20px;
   text-align: center;
   /* margin: auto; */
@@ -164,6 +164,13 @@ img {
 } */
 
 @media only screen and (max-width: 1200px) {
+  img{
+    transform: translateY(0);
+  }
+
+  p{
+    padding: 3% 3%;
+  }
   .benefit {
     flex-direction: column;
     width: 90%;
