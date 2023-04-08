@@ -1,20 +1,22 @@
 <template>
-  <div class="downloads">
-    <h1>הורדות</h1>
-    <div class="downloads-container">
-      <div>
-        <p>תוכנית סוף שנה 2023 כקובץ exe:</p><a href="/downloads/m2023.exe" download>להורדה</a>
-      </div>
-      <div>
-        <p>תוכנית סוף שנה 2023 כקובץ zip:</p><a href="/downloads/m2023.zip" download>להורדה</a>
-      </div>
+  <div class="end-year">
+    <div class="explain">
+      <h1>שינוי פרמטר שנת מס</h1>
+      <p><mark>שימו לב לשינוי פרמטר שנת מס</mark></p>
+      <p>את הפעולה יש לבצע ב- 01/01/2023 בבוקר או בסוף יום -30/12/2022.</p>
+      <p>מהתפריט הראשי לוחצים <b>תחזוקת מערכת</b>-----><br><b>פרמטרים</b>----> לוחצים <b>כללי</b> בפינה השמאלית העליונה
+      </p>
+      <p>יש לשנות את <mark>פרמטר שנת מס</mark> ל- <b>2023</b></p>
+      <p>לסיום הפעולה יש ללחוץ <mark>אישור</mark> <b>למטה בצד ימין</b></p>
+      <img src="../assets/jpg/ppage15.jpg" alt="">
+      <p>בהצלחה, ובברכת שנה מוצלחת. <mark>ממיטל מחשבים</mark>.</p>
     </div>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'Downloads',
+  name: 'EndYear',
   data() {
 
   },
@@ -29,7 +31,7 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-.downloads {
+.end-year {
   text-align: center;
   flex-grow: 1;
 }
@@ -39,6 +41,7 @@ export default {
 }
 
 h1 {
+  text-decoration: underline;
   margin: 1.5% 0;
 }
 
@@ -52,13 +55,14 @@ mark {
 }
 
 .downloads-container {
-  color: rgb(31, 3, 107);
+  color: white;
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 20px 0;
   gap: 15px;
   justify-content: space-around;
+  background-color: rgb(49, 85, 133);
 }
 
 .downloads-container div {
@@ -87,11 +91,11 @@ img {
 }
 
 @media only screen and (max-width: 450px) {
-  .downloads {
+  .end-year {
     font-size: 1rem;
   }
 
-  .downloads-container div {
+  .end-year-container div {
     width: 70%;
   }
 

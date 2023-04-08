@@ -41,4 +41,11 @@ export default {
 .active {
     opacity: 1;
 }
+
+@media only screen and (max-width: 1200px) {
+    .carousel-dot{
+        height: 10px;
+        width: 10px;
+    }
+}
 </style>

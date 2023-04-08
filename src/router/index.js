@@ -8,6 +8,7 @@ import Specs from '../components/Specs';
 import Contact from '../components/Contact';
 import Downloads from '../components/Downloads';
 import Motors from '../components/Motors';
+import EndYear from '../components/EndYear';
 
 const routes=[
     {
@@ -41,7 +42,7 @@ const routes=[
         component: Contact
     },
     {
-        path: '/downloads',
+        path: '/form14.htm',
         name: 'Downloads',
         component: Downloads
     },
@@ -49,6 +50,11 @@ const routes=[
         path: '/motors',
         name: 'Motors',
         component: Motors
+    },
+    {
+        path: '/end-year',
+        name: 'EndYear',
+        component: EndYear
     },
 ];
 

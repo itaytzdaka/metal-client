@@ -8,7 +8,8 @@
         </li>
         <li><router-link to="/specs">מפרט טכני</router-link></li>
         <li><router-link to="/contact">יצירת קשר</router-link></li>
-        <li><router-link to="/downloads">הורדות</router-link></li>
+        <li><router-link to="/form14.htm">הורדות</router-link></li>
+        <li><router-link to="/end-year">סוף שנה</router-link></li>
       </ul>
     </nav>
   </div>
@@ -71,7 +72,7 @@ li a:hover {
 
 @media only screen and (max-width: 650px) {
   #metal-logo {
-    width: 100px;
+    width: 70px;
     /* height: auto; */
   }
 

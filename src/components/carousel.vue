@@ -175,4 +175,12 @@ button:hover {
     color: white;
     background: rgba(0, 0, 0, 0.8);
     padding: 10px;
-}</style>
+}
+
+@media only screen and (max-width: 1200px) {
+    .carousel p {
+        font-size: x-small;
+        padding: 5px
+    }
+}
+</style>

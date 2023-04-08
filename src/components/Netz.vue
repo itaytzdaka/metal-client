@@ -27,7 +27,7 @@ export default {
         require('../assets/jpg/6.jpg'),
       ],
       text: [
-        'slide 1',
+        'הצגת דף תנועות חובה זכות של לקוח',
       ]
     }
   }

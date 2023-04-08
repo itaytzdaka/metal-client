@@ -7,7 +7,7 @@
           <img v-bind:src="software.src" :alt="software.title">
           <h4>{{ software.title }}</h4>
           <p>{{ software.text }}</p>
-          <router-link :to="software.url">לעוד מידע</router-link>
+          <router-link :to="software.url">מידע נוסף</router-link>
         </div>
       </transition-group>
     </div>
@@ -76,7 +76,7 @@ export default {
       },
       {
         src: require('../assets/jpg/by cars.jpg'),
-        title: "מיטל מגרשים",
+        title: "מיטל טרייד",
         text: `תוכנה למגרשי רכב.\n
         ניהול קניה ומכירת רכבים.`,
         url: "/motors"
