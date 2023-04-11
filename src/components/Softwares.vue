@@ -39,8 +39,8 @@ export default {
       gsap.to(el, {
         scrollTrigger: {
           trigger: el,
-          start: "40% 90%",
-          //markers: true,
+          start: "5% 100%",
+          // markers: true,
         },
         duration: 1,
         y: 0,

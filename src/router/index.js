@@ -9,6 +9,7 @@ import Contact from '../components/Contact';
 import Downloads from '../components/Downloads';
 import Motors from '../components/Motors';
 import EndYear from '../components/EndYear';
+import Multicat from '../components/Multicat';
 
 const routes=[
     {
@@ -55,6 +56,11 @@ const routes=[
         path: '/end-year',
         name: 'EndYear',
         component: EndYear
+    },
+    {
+        path: '/multicat',
+        name: 'Multicat',
+        component: Multicat
     },
 ];
 

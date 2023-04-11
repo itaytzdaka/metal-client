@@ -6,8 +6,8 @@
         <div class="letter-container">
           <div class="letter">
             <p>טלפון</p>
-            <p>03-5590294, 03-5595936</p>
-            <p>nor@017.net.il</p>
+            <p>03-5595936</p>
+            <p>03-5590294</p>
           </div>
           <img class="phone" src="../assets/svg/phone.svg" alt="My Happy SVG" />
         </div>

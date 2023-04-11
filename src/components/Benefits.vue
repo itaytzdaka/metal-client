@@ -6,7 +6,7 @@
         <div class="benefit" :key="benefit.title" v-for="benefit in benefits">
           <img v-bind:src="benefit.src" :alt="benefit.title">
           <h4>{{ benefit.title }}</h4>
-          <p>{{ benefit.text }}</p>
+          <p v-html="benefit.text"></p>
         </div>
       </transition-group>
 
@@ -23,7 +23,7 @@ export default {
   name: 'Benefits',
   data() {
     return {
-      benefits: []
+      benefits: [],
     }
   },
   created() {
@@ -65,7 +65,7 @@ export default {
         src: require('../assets/svg/Metal-logo.svg'),
         title: "קישוריות למולטיקט",
         text: `תמיכה ביצירת קובץ ממשק לחשבוניות הסדר חברות ביטוח
-            לפי פורמט מ.ר.מ.`
+            לפי פורמט מ.ר.מ. <a href="/multicat">ראה קובץ הנחיות ליצירת הממשק</a>`
       },
       {
         src: require('../assets/svg/Metal-logo.svg'),
