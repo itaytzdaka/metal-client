@@ -101,7 +101,7 @@ p {
 
 .details {
   padding: 10% 0;
-  line-height: 16px;
+  line-height: 1em;
 }
 
 p {

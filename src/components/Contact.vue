@@ -34,8 +34,6 @@
       </form>
     </div>
   </div>
-
-
 </template>
 
 <script>
@@ -65,20 +63,49 @@ export default {
         //   phone: this.phone,
         //   message: this.message
         // });
-        await emailjs.sendForm('service_uvwy2jp', 'template_zpwpnpo', e.target, 'Kbv6svu_53GSgKW4w');
-        alert("ההודעה נשלחה");
+        if (this.formValidation().isValid) {
+          // await emailjs.sendForm('service_uvwy2jp', 'template_zpwpnpo', e.target, 'Kbv6svu_53GSgKW4w');
+          alert("ההודעה נשלחה");
+
+          // Reset form field
+          this.firstName = '';
+          this.lastName = '';
+          this.email = '';
+          this.phone = '';
+          this.message = '';
+        }
+
+        else{
+          alert(this.formValidation().errorMessage);
+        }
+
 
       } catch (error) {
         alert("התרחשה שגיאה");
         console.log("error: ", { error })
       }
-      // Reset form field
-      this.firstName = '';
-      this.lastName = '';
-      this.email = '';
-      this.phone = '';
-      this.message = '';
+
     },
+
+    formValidation() {
+
+      let formStatus = {
+        isValid: true,
+        errorMessage: ''
+      };
+
+      if (!this.firstName || !this.lastName || !this.email || !this.phone || !this.message) {
+        formStatus.isValid = false;
+        formStatus.errorMessage= "יש למלא את כל השדות"
+      }
+
+      else if(this.firstName.length>30 || this.lastName>30 | this.email>30 || this.phone>20 || this.message>100 ){
+        formStatus.isValid = false;
+        formStatus.errorMessage= "יותר מדי מלל באחת מתיבות הטקסט"
+      }
+
+      return formStatus;
+    }
   }
 }
 </script>
