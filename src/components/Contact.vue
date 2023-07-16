@@ -64,7 +64,7 @@ export default {
         //   message: this.message
         // });
         if (this.formValidation().isValid) {
-          // await emailjs.sendForm('service_uvwy2jp', 'template_zpwpnpo', e.target, 'Kbv6svu_53GSgKW4w');
+          await emailjs.sendForm('service_uvwy2jp', 'template_zpwpnpo', e.target, 'Kbv6svu_53GSgKW4w');
           alert("ההודעה נשלחה");
 
           // Reset form field
