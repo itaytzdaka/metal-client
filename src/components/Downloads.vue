@@ -3,7 +3,7 @@
     <h1>הורדות</h1>
     <div class="downloads-container">
       <div>
-        <p>תוכנית סוף שנה 2023 כקובץ exe:</p><a href="/downloads/m2023.exe" download>להורדה</a>
+        <p>עדכון API v2:</p><a href="/downloads/m2023.exe" download>להורדה</a>
       </div>
       <div>
         <p>תוכנית סוף שנה 2023 כקובץ zip:</p><a href="/downloads/m2023.zip" download>להורדה</a>
