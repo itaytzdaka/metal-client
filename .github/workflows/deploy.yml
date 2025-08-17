@@ -8,6 +8,7 @@ on:
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
+    environment: metal-org
 
     env:
       SSH_USER: ${{ secrets.SSH_USER }}
@@ -21,7 +22,7 @@ jobs:
 
     steps:
       - name: Checkout
-      - uses: actions/checkout@v4
+        uses: actions/checkout@v4
 
       # - name: Use Node.js
       #   uses: actions/setup-node@v4
