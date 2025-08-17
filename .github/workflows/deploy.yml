@@ -50,7 +50,11 @@ jobs:
 
       - name: Ensure remote path exists
         run: |
-          ssh -p "${SSH_PORT}" -i ~/.ssh/id_deploy "${SSH_USER}@${SSH_HOST}" "mkdir -p '${DEPLOY_PATH}'"
+          ssh -p "${SSH_PORT}" -i ~/.ssh/id_deploy "${SSH_USER}@${SSH_HOST}" "
+            mkdir -p '${DEPLOY_PATH}' &&
+            echo '--- Contents of ${DEPLOY_PATH} ---' &&
+            ls -la '${DEPLOY_PATH}'
+          "
 
       # - name: Deploy with rsync (override existing files)
       #   run: |
