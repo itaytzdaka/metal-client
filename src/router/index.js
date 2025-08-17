@@ -15,7 +15,8 @@ const routes=[
     {
         path: '/',
         name: 'Home',
-        component: Home
+        component: Home,
+        alias: '/ppage1.htm'
     },
     {
         path: '/metal',

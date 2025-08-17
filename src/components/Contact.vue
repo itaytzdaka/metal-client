@@ -99,7 +99,7 @@ export default {
         formStatus.errorMessage= "יש למלא את כל השדות"
       }
 
-      else if(this.firstName.length>30 || this.lastName>30 | this.email>30 || this.phone>20 || this.message>100 ){
+      else if(this.firstName.length>30 || this.lastName.length>30 | this.email.length>30 || this.phone.length>20 || this.message.length>100 ){
         formStatus.isValid = false;
         formStatus.errorMessage= "יותר מדי מלל באחת מתיבות הטקסט"
       }
