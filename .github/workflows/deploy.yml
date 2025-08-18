@@ -56,9 +56,15 @@ jobs:
             ls -la '${DEPLOY_PATH}'
           "
 
+      # - name: Deploy with rsync (override existing files)
+      #   run: |
+      #     rsync -az --delete \
+      #       --exclude ".htaccess" \
+      #       -e "ssh -p ${SSH_PORT} -i ~/.ssh/id_deploy -o StrictHostKeyChecking=yes" \
+      #       "${BUILD_DIR}/" "${SSH_USER}@${SSH_HOST}:${DEPLOY_PATH}/"
+
       - name: Deploy with rsync (override existing files)
         run: |
-          rsync -az --delete \
-            --exclude ".htaccess" \
+          rsync -az \
             -e "ssh -p ${SSH_PORT} -i ~/.ssh/id_deploy -o StrictHostKeyChecking=yes" \
             "${BUILD_DIR}/" "${SSH_USER}@${SSH_HOST}:${DEPLOY_PATH}/"
