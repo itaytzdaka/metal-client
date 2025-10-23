@@ -47,26 +47,23 @@ jobs:
           touch ~/.ssh/known_hosts
           ssh-keyscan -4 -T 20 -t rsa,ecdsa,ed25519 -p "${SSH_PORT}" "${SSH_HOST}" >> ~/.ssh/known_hosts 2>/dev/null || echo "WARN: ssh-keyscan failed; continuing"
 
-      - name: Ensure remote path exists
+      - name: Verify SSH & list remote directory
         run: |
-          ssh -p "${SSH_PORT}" -i ~/.ssh/id_deploy \
+          ssh \
+            -p "${SSH_PORT}" \
+            -i ~/.ssh/id_deploy \
             -o PreferredAuthentications=publickey \
             -o IdentitiesOnly=yes \
+            -o StrictHostKeyChecking=yes \
             -o ConnectTimeout=10 \
             -o ServerAliveInterval=15 \
             -o ServerAliveCountMax=2 \
             "${SSH_USER}@${SSH_HOST}" "
-              mkdir -p '${DEPLOY_PATH}' &&
-              echo '--- Contents of ${DEPLOY_PATH} ---' &&
+              echo '✅ SSH connection OK'
+              mkdir -p '${DEPLOY_PATH}'
+              echo '--- Contents of ${DEPLOY_PATH} ---'
               ls -la '${DEPLOY_PATH}'
-          "
-
-      - name: Smoke test connectivity
-        run: |
-          # בדיקה קצרה שלא נתקע; אם נכשל - עצור בנקודה ברורה
-          ssh -o ConnectTimeout=10 -o StrictHostKeyChecking=yes \
-              -i ~/.ssh/id_deploy -p "${{ secrets.SSH_PORT }}" \
-              "${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}" "echo ok"
+            "
 
 
       - name: Deploy with rsync (override existing files)
