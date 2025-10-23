@@ -6,7 +6,9 @@
         <p>עדכון API v2:</p><a href="/downloads/m2023.exe" download>להורדה</a>
       </div> -->
       <div>
-        <p>עדכון API v2:</p><a href="/downloads/apiv2.zip" download>להורדה</a>
+        <p>תוכנית סוף שנה 2026 יישום:</p><a href="/downloads/2026.exe" download>להורדה</a>
+        <p>תוכנית סוף שנה 2026 קובץ דחוס  - זיפ:</p><a href="/downloads/2026.zip" download>להורדה</a>
+
       </div>
     </div>
   </div>
