@@ -7,8 +7,9 @@
       </div> -->
       <div>
         <p>תוכנית סוף שנה 2026 יישום:</p><a href="/downloads/2026.exe" download>להורדה</a>
+      </div>
+      <div>
         <p>תוכנית סוף שנה 2026 קובץ דחוס  - זיפ:</p><a href="/downloads/2026.zip" download>להורדה</a>
-
       </div>
     </div>
   </div>
